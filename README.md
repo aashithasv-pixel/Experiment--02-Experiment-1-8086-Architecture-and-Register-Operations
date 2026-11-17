@@ -1,6 +1,7 @@
 # Experiment--02-Experiment-1-8086-Architecture-and-Register-Operations
- Name: Aashitha
- Register number: RA2511030010359
+NAME - Aashitha
+Reg No - RA2511030010359
+ 
 ## Aim
 
 To study the architecture of the 8086 microprocessor and write assembly
@@ -140,6 +141,8 @@ END MAIN
 -   AX = `1234H`
 -   BX = `1234H`
 -   RESULT = `1234H`
+<img width="640" height="294" alt="image" src="https://github.com/user-attachments/assets/e1df2587-4621-4e54-8354-48b0071ef871" />
+
 
 ### Explanation
 
@@ -177,7 +180,7 @@ Write an 8086 assembly language program to exchange the contents of two
   VALUE2                       `2222H`           `1111H`
 
 ### Explanation
-The 8086 cannot move data directly from one memory location to another with a single MOV, so registers are used as temporary storage. VALUE1 is loaded into AX and VALUE2 into BX. BX is then written to VALUE1 and AX to VALUE2, so the two values are exchanged. No data is lost because both original values are held in registers before either memory location is overwritten.
+
   
 ------------------------------------------------------------------------
 
@@ -191,11 +194,30 @@ The 8086 cannot move data directly from one memory location to another with a si
 6.  Inspect the registers and memory variables.
 7.  Record the observed results and compare them with the expected
     results.
+
+
+##code
+    .MODEL SMALL
+.STACK 100H
+
+.DATA
+    VALUE1 DW 1111H
+    VALUE2 DW 2222H
+
+.CODE
+
+    MOV AX, @DATA
+    MOV DS, AX
+
+    MOV AX, VALUE1       
+    MOV BX, VALUE2       
+
+    MOV VALUE1, BX       
+    MOV VALUE2, AX       
+
+    HLT
 ## Screenshot of the results 
-
-<img width="1600" height="770" alt="WhatsApp Image 2026-11-17 at 4 33 24 PM" src="https://github.com/user-attachments/assets/a82b8b4e-9d50-46fd-90d7-e5d798ebbf14" />
-
-<img width="1600" height="768" alt="WhatsApp Image 2026-11-17 at 4 33 53 PM" src="https://github.com/user-attachments/assets/c8a6d256-6821-42cc-b0d9-b31fc9404a13" />
+<img width="1466" height="794" alt="image" src="https://github.com/user-attachments/assets/4a349dfd-c4d1-45b6-b9b9-931f0753b914" />
 
 
 
